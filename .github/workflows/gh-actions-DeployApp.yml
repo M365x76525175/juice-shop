@@ -74,7 +74,7 @@ jobs:
       with:
         app-name: 'juiceshop-prod-devsecops-${{ secrets.LABINSTANCEID }} '
         general-settings-json: '{"linuxFxVersion": "DOCKER|acrdevsecops${{ secrets.CONTAINERREGISTRY }}.azurecr.io/devsecops:${{ github.run_id }}"}' 
-        app-settings-json: '[{ "name": "SQL_DB_URL", "value": "@Microsoft.KeyVault(SecretUri=https://kvdevsecops57799827.vault.azure.net/secrets/SQL-DB-URL)", "slotSetting": false }, { "name": "2FASecret", "value": "@Microsoft.KeyVault(SecretUri=https://kvdevsecops57799827.vault.azure.net/secrets/2FASecret)", "slotSetting": false }]    '
+        app-settings-json: '[{ "name": "SQL_DB_URL", "value": "@Microsoft.KeyVault(SecretUri=https://berkinvaultu.vault.azure.net/secrets/SQL-DB-URL/c29b4725ca9a4555a030504e709d5754)", "slotSetting": false }, { "name": "2FASecret", "value": "@Microsoft.KeyVault(SecretUri=https://berkinvaultu.vault.azure.net/secrets/2FASecret/3de638f6b1f441e48ab80ba3fd2c1787)", "slotSetting": false }]    '
     - uses: Azure/cli@v1.0.0
       with:
         inlineScript: az webapp restart --resource-group ${{ secrets.PRODRESOURCEGROUP }}  --name juiceshop-prod-devsecops-${{ secrets.LABINSTANCEID }} 
